@@ -1,21 +1,26 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 class Options extends Component {
     render() {
-        const { options, selectOption, onOptionChange } = this.props
+        const { options, selectedOption, onOptionChange } = this.props;
 
         return (
-            <div className="options">
+            <div className='options'>
                 {options.map((option, index) => (
                     <div key={index} className="form-check">
-                    <input className="form-check-input" type="radio" name="option" value={option} checked={selectOption === option} onChange={onOptionChange}>
-                    <label className="form-check-label">
-                      {option}
-                    </label>
+                        <input
+                            type="radio"
+                            name="option"
+                            value={option}
+                            checked={selectedOption === option}
+                            onChange={onOptionChange}
+                            className="form-check-input"
+                        />
+                        <label className="form-check-label">{option}</label>
                     </div>
                 ))}
             </div>
-        )
+        );
     }
 }
 
